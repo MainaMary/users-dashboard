@@ -1,0 +1,151 @@
+<div class="flex w-calc px-4">
+    <div class="flex flex-col my-5 w-full  px-4">
+        <h2 class="text-slate-700 text-[18px] font-[700]">Add User</h2>
+        <form [formGroup]="myForm" (ngSubmit)="submitForm()" class="w-full">
+            <div class="flex flex-col mt-4  w-full rounded-lg">
+                <div class="flex flex-col  gap-3 w-full px-3 pt-2 border border-gray-300  rounded-lg">
+                    <div class="flex flex-col gap-4">
+                        <h2 class="text-slate-700 text-[18px] font-[700] underline">Personal Information</h2>
+                        <div class="flex w-full gap-[10%] rounded-lg items-center justify-between">
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">Name</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-full max-w-full" 
+                                    pInputText
+                                    formControlName="name" placeholder="Enter Your Name"
+                                >
+                                <div  class="text-red-500">
+                                    {{error}}
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">User Name</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg max-w-full w-full" 
+                                    pInputText
+                                    formControlName="username"  placeholder="Enter Your User Name">
+                                    <div  class="text-red-500">
+                                        {{error}}
+                                    </div>
+                            </div>
+                        </div>
+    
+                        <div class="flex w-full gap-[10%] rounded-lg items-center justify-between">
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">Phone</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-full max-w-full"
+                                    pInputText
+                                    formControlName="phone"
+                                    placeholder="Enter Your Phone">
+                                    <div  class="text-red-500">
+                                        {{error}}
+                                    </div>
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">Email</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-full max-w-full"
+                                    pInputText
+                                    formControlName="email"
+                                    placeholder="Enter Your Email">
+                                    <div  class="text-red-500">
+                                        {{error}}
+                                    </div>
+                            </div>
+                        </div>
+    
+                        <div class="flex w-full gap-[10%] rounded-lg items-center justify-between">
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">Website</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-[45%] max-w-[45%]"
+                                    pInputText
+                                    formControlName="website"
+                                    placeholder="Enter Website">
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="flex flex-col mt-5">
+                        <h2 class="text-slate-700 text-[18px] font-[700] underline">Address</h2>
+                        <div class="flex my-3 w-full gap-[10%] rounded-lg items-center justify-between">
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">street</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-full max-w-full"
+                                    pInputText
+                                    formControlName="street"
+                                    placeholder="Enter Street">
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">Suite</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-full max-w-full"
+                                    pInputText
+                                    formControlName="suite"
+                                    placeholder="Enter Suite">
+                            </div>
+                        </div>
+    
+                        <div class="flex w-full gap-[10%] rounded-lg items-center justify-between">
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">City</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-full max-w-full"
+                                    pInputText
+                                    formControlName="city"
+                                    placeholder="Enter City">
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">ZipCode</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-full max-w-full"
+                                    pInputText
+                                    formControlName="zipCode"
+                                    placeholder="Enter ZipCode">
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="flex flex-col my-5">
+                        <h2 class="text-slate-700 text-[18px] font-[700] underline">Company</h2>
+                        <div class="flex my-3 w-full gap-[10%] rounded-lg items-center justify-between">
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">Company Name</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-full max-w-full"
+                                    pInputText
+                                    formControlName="companyName"
+                                    placeholder="Enter Company Name">
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">Company CatchPhrase</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-full max-w-full"
+                                    pInputText
+                                    formControlName="catchPhrase"
+                                    placeholder="Enter Company CatchPhrase">
+                            </div>
+                        </div>
+    
+                        <div class="flex w-full gap-[10%] rounded-lg items-center justify-between">
+                            <div class="flex flex-col gap-1 w-full">
+                                <label class=" text-[16px] text-slate-700 font-[500]">Comapny Business</label>
+                                <input type="text"
+                                    class="px-2 border border-gray-300 h-[35px] rounded-lg w-[45%] max-w-[45%]"
+                                    pInputText
+                                    formControlName="companyBusiness"
+                                    placeholder="Enter Comapny Business">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="flex my-5">
+                    <button type="submit" id="submit" class="px-6 py-2 bg-[#f58220] rounded-lg text-white font-[500] text-[18px] ">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

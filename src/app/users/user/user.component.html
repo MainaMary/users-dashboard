@@ -1,0 +1,91 @@
+
+<div class="flex w-calc px-4">
+    <div class="flex flex-col mx-5 mt-5 flex w-calc px-4">
+        <h2 class=" text-[23px] text-slate-800 font-[700]">User Details</h2>
+        @if(loading){
+            <div class="card flex justify-content-center w-full items-center justify-center mt-10">
+                <p-progressSpinner></p-progressSpinner>
+            </div>
+        }
+        @if(user){
+        <div class="flex flex-col my-5 border border-gray-300 w-full rounded-lg p-6">
+            <div class="flex flex-col">
+                <div class="flex">
+                    <h2 class="my-3 text-slate-700 font-[600] underline text-[17px]">Contact Information</h2>
+                </div>
+                <div class="flex gap-14 w-full">
+                    <div class="flex flex-col  gap-1 ">
+                        <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">Name</label>
+                        <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.name}}</span>
+                    </div>
+                    <div class="flex flex-col  gap-1 ">
+                        <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">User Name</label>
+                        <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.username}}</span>
+                    </div>
+                    <div class="flex flex-col  gap-1 ">
+                        <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">Email</label>
+                        <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.email}}</span>
+                    </div>
+                    <div class="flex flex-col  gap-1 ">
+                        <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">Phone</label>
+                        <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.phone}}</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="flex flex-col mt-5">
+                <div class="flex">
+                    <h2 class="my-3 text-slate-700 font-[600] underline text-[17px]">Address Information</h2>
+                </div>
+                @if(user.address?.street !== '' && user.address?.city !== '' && user.address?.suite !== '' && user.address?.zipcode !== ''){
+                    <div class="flex gap-14 w-full">
+                        <div class="flex flex-col  gap-1  gap-1 ">
+                            <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">Street</label>
+                            <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.address.street}}</span>
+                        </div>
+                        <div class="flex flex-col  gap-1  gap-1 ">
+                            <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">Suite</label>
+                            <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.address.suite}}</span>
+                        </div>
+                        <div class="flex flex-col  gap-1  gap-1 ">
+                            <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">City</label>
+                            <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.address.city}}</span>
+                        </div>
+                        <div class="flex flex-col  gap-1  gap-1 ">
+                            <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">ZipCode</label>
+                            <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.address.zipcode}}</span>
+                        </div>
+                        
+                    </div>
+
+                }@else {
+                    <p>The user has no Address Information</p>
+                }
+            </div>
+            <div class="flex flex-col mt-5">
+                <div class="flex">
+                    <h2 class="my-3 text-slate-700 font-[600] underline text-[17px]">Company Information</h2>
+                </div>
+                @if(user.company?.name !== '' && user.company?.bs !== '' && user.company?.catchPhrase !== ''){
+                    <div class="flex flex-col gap-2 w-full mt-2">
+                        <div class="flex gap-1 ">
+                            <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">Company Name: </label>
+                            <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.company?.name}}</span>
+                        </div>
+                        <div class="flex gap-1 ">
+                            <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">Comapny CatchPhrase:</label>
+                            <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.company?.catchPhrase}}</span>
+                        </div>
+                        <div class="flex gap-1 ">
+                            <label class=" text-[16px] text-slate-700 leading-[20px] font-[500]">Comapny Business:</label>
+                            <span class=" text-[16px] text-slate-500 leading-[20px] font-[500]">{{user.company?.bs}}</span>
+                        </div>
+                    </div>
+                }@else {
+                    <p>The user has no Company Information</p>
+                }
+            </div>
+        </div>
+        }
+    </div>
+</div>

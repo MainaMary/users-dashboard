@@ -1,0 +1,63 @@
+<div class="w-calc w-full">
+   <h2 class="text-[22px] text-start font-[700] mx-3 my-5 ">Users List</h2>
+      @if(allusers.length > 0){
+         <div class=" card border border-gray-300 mx-3 rounded-lg">
+            <p-table 
+            #dt1
+            class=" rounded-lg" 
+            [value]="allusers" 
+            styleClass="p-datatable-striped" 
+            [paginator]="true" 
+            [rows]="5"
+            [loading]="loading"
+            [showCurrentPageReport]="true" 
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [rowsPerPageOptions]="[5, 10, 20]" 
+            [globalFilterFields]="['name','email']"
+            [tableStyle]="{'min-width': '100%'}">
+            <ng-template pTemplate="caption">
+               <div class="flex">
+                   <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+                   <span class="p-input-icon-left ml-auto ">
+                       <input type="text" (input)="dt1.filterGlobal(getEventValue($event), 'contains')" class="h-[40px] font-[400] text-[#f58220] px-2 rounded-lg border border-[#f58220] focus:outline-none !text-slate-700" placeholder="Search User" />
+                   </span>
+               </div>
+           </ng-template>
+               <ng-template pTemplate="header">
+                  <tr>
+                     <th scope="col" pSortableColumn="id">ID</th>
+                     <th scope="col" pSortableColumn="name">Name</th>
+                     <th scope="col" >UserName</th>
+                     <th scope="col" pSortableColumn="email">Email</th>
+                     <th scope="col" >Phone</th>
+                     <th scope="col" >Website</th>
+                     <th scope="col">Manage</th>
+                  </tr>
+               </ng-template>
+               <ng-template pTemplate="body" let-user>
+                  <tr>
+                     <td>{{user.id}}</td>
+                     <td>{{user.name}}</td>
+                     <td>{{user.username}}</td>
+                     <td>{{user.email}}</td>
+                     <td>{{user.phone}}</td>
+                     <td>{{user.website}}</td>
+                     <td>
+                        <a [routerLink]="['/users/' + user?.id]">
+                          <i data-cy="editProject"
+                            class="pi pi-arrow-right text-[#f58220]"
+                          ></i>
+                        </a>
+                      </td>
+                  </tr>
+               </ng-template>
+            </p-table>
+         </div>
+   
+      } @else {
+         <p class="mx-4">There are no users to display</p>
+      }
+   <div class="block lg:hidden bg-red-400">
+      cards
+   </div>
+</div>
