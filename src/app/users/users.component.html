@@ -19,7 +19,7 @@
                <div class="flex">
                    <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
                    <span class="p-input-icon-left ml-auto ">
-                       <input type="text" (input)="dt1.filterGlobal(getEventValue($event), 'contains')" class="h-[40px] font-[400] text-[#f58220] px-2 rounded-lg border border-[#f58220] focus:outline-none !text-slate-700" placeholder="Search User" />
+                       <input type="text" (input)="dt1.filterGlobal(getEventValue($event), 'contains')" class="h-[40px] font-[400] text-primary px-2 rounded-lg border border-primary focus:outline-none placeholder="Search User" />
                    </span>
                </div>
            </ng-template>
@@ -45,7 +45,7 @@
                      <td>
                         <a [routerLink]="['/users/' + user?.id]">
                           <i data-cy="editProject"
-                            class="pi pi-arrow-right text-[#f58220]"
+                            class="pi pi-arrow-right text-primary"
                           ></i>
                         </a>
                       </td>
